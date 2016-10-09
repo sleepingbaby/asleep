@@ -1,12 +1,46 @@
-*.class
+import java.util.*;
+public class Marbles {
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+	public static void main(String[]args)
+	
+	
+	
+	{
+		Scanner in = new Scanner(System.in);
+		int marbles = (int)(Math.random()*90+10), pick = 0;	
+		int player = (int)(Math.random() +0.5);
+		
+		while(marbles>0)
+		{if(player==0)//person
+		{System.out.print("Pick some marbles ");
+		pick = in.nextInt();}
+		else if(pick > marbles/2)
+		{System.out.println("Pick must be less than half");
+		marbles = marbles-pick;
+		System.out.println(marbles+ " left");
+		}
+	
+		
+		else{pick=(int)(Math.random()*marbles/2+1);
+		marbles=marbles-pick;
+		System.out.println("computer picks " +pick +" marbles left " +marbles);
+		}
+		
+		
+		if(player==0)//switching
+			player=1;//code
+		else player=0;
+		}
+		if(player==0)
+			System.out.println("You win!");
+		else
+			System.out.println("You lose!");
+		
+	
+		
+		
+		in.close();
+		
+		}		
+	}
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
