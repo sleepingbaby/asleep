@@ -1,46 +1,77 @@
 import java.util.*;
 public class Marbles {
 
-	public static void main(String[]args)
+	public static void main(String[]args){
 	
+	int marbles = (int)(Math.random()*90 + 10), pick = 0;
+	int player = (int)(Math.random() + 0.5);
+	int computerMode = (int)(Math.random() + 0.5);
 	
+	Scanner in = new Scanner(System.in);
 	
+	if(computerMode == 0)
 	{
-		Scanner in = new Scanner(System.in);
-		int marbles = (int)(Math.random()*90+10), pick = 0;	
-		int player = (int)(Math.random() +0.5);
-		
-		while(marbles>0)
-		{if(player==0)//person
-		{System.out.print("Pick some marbles ");
-		pick = in.nextInt();}
-		else if(pick > marbles/2)
-		{System.out.println("Pick must be less than half");
-		marbles = marbles-pick;
+		System.out.println("Prepare to lose...");
+	}
+	
+	if(computerMode == 1)
+	{
+		System.out.println("The computer is in dumb mode");
+	}
+	
+	System.out.println("There are " +marbles +" marbles");
+	
+	
+	while(marbles > 0)
+	{if(player == 0)
+		{System.out.print("Pick some marbles. " +"Pick must be less than " +marbles/2 +".");
+		System.out.println();
+		pick = in.nextInt();
+		marbles = marbles - pick;
 		System.out.println(marbles+ " left");
 		}
 	
+	if(player == 1)
+		{System.out.println("It is the computer's turn...");
+		if(computerMode == 0)
+		{pick = (int)(Math.random()*marbles/2 + 1);
+		marbles = marbles - pick;
+		}
+		System.out.println("The computer picked " +pick);
+		System.out.println("There are " +marbles +" marbles left");
+		}
 		
-		else{pick=(int)(Math.random()*marbles/2+1);
-		marbles=marbles-pick;
-		System.out.println("computer picks " +pick +" marbles left " +marbles);
+	else
+		{if(marbles > 63) {pick = marbles - 63; marbles = marbles - pick;}
+		else if(marbles > 31) {pick = marbles - 31; marbles = marbles - pick;}
+		else if(marbles > 15) {pick = marbles - 15; marbles = marbles - pick;}
+		else if(marbles > 7) {pick = marbles - 7; marbles = marbles - pick;}
+		else if(marbles > 3) {pick = marbles - 3; marbles = marbles - pick;}
 		}
 		
 		
-		if(player==0)//switching
-			player=1;//code
-		else player=0;
-		}
-		if(player==0)
-			System.out.println("You win!");
-		else
-			System.out.println("You lose!");
 		
 	
-		
-		
-		in.close();
-		
-		}		
+	
+	
+	 
+	
+	if(player == 0)
+		player = 1;
+	else player = 0;
 	}
-
+	
+	if(player == 0)
+		System.out.println("You win!");
+	else
+		System.out.println("You lose!");
+	
+	in.close();
+	
+	}
+	
+	}
+	
+	
+	
+	
