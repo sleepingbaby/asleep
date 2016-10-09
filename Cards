@@ -1,0 +1,58 @@
+import java.util.*;
+public class Homework {
+
+	public static void main(String[] args) {
+		
+		{Scanner in = new Scanner(System.in);
+		
+		String card;
+		String letter1, letter2;
+		
+		System.out.print("Enter a card ");
+		card = in.nextLine();
+		
+		letter1 = card.substring(0,1);
+		letter2 = card.substring(1,2);
+	
+		if(letter1.equals("A"))
+			System.out.print("Ace of ");
+		else if(letter1.equals("K"))
+			System.out.print("King of ");
+		else if(letter1.equals("Q"))
+			System.out.print("Queen of ");
+		else if(letter1.equals("J"))
+			System.out.print("Jack of ");
+		else if(letter1.equals("9"))
+			System.out.print("Nine of ");
+		else if(letter1.equals("8"))
+			System.out.print("Eight of ");
+		else if(letter1.equals("7"))
+			System.out.print("Seven of ");
+		else if(letter1.equals("6"))
+			System.out.print("Six of ");
+		else if(letter1.equals("5"))
+			System.out.print("Five of ");
+		else if(letter1.equals("4"))
+			System.out.print("Four of ");
+		else if(letter1.equals("3"))
+			System.out.print("Three of ");
+		else if(letter1.equals("2"))
+			System.out.print("Two of ");
+		else if(letter1.equals("1"))
+			System.out.print("Ten of ");
+		
+		if(letter2.equals("S"))
+			System.out.println("Spades");
+		else if(letter2.equals("D"))
+			System.out.println("Diamonds");
+		else if(letter2.equals("C"))
+			System.out.println("Clubs");
+		else if(letter2.equals("H"))
+			System.out.println("Hearts");
+		
+		in.close();
+		}
+		
+	}
+
+}
