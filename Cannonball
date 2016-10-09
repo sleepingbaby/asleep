@@ -1,0 +1,29 @@
+
+public class Cannonball {
+
+	public static void main(String[] args) {
+		
+		double v = 100, g = 9.81, deltaT = 0.01, pos = 0, sx = 0, v0 = 100;
+		int t = 0, i = 0;
+		
+		while(pos >= 0){
+			while (i < 100 && pos >= 0 && sx >= 0){
+			pos = pos + v * (deltaT);
+			v = v - g * (deltaT);
+			i++;
+			}
+		
+			i = 0;
+			
+			t++;
+			sx = -0.5 * g * t * t + v0 * t;
+			System.out.println(pos + " " + sx);
+			}
+		
+				
+				
+		
+		
+		}	
+	}
+	
